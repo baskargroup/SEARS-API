@@ -1,3 +1,12 @@
+
+import express from 'express';
+import User from '../models/User.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import nodemailer from 'nodemailer';
+const router = express.Router();
+
+
 // Admin: Extend API key validity by 90 days
 router.post('/extend-apikey/:id', async (req, res) => {
   const user = await User.findById(req.params.id);
@@ -13,13 +22,8 @@ router.delete('/user/:id', async (req, res) => {
   await user.deleteOne();
   res.send('User deleted');
 });
-import express from 'express';
-import User from '../models/User.js';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import nodemailer from 'nodemailer';
 
-const router = express.Router();
+
 
 // Helper: Send email
 async function sendEmail(to, subject, text) {
