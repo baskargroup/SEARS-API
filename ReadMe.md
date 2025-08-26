@@ -16,7 +16,7 @@ This application provides the frontend and backend for SEARS. It has the followi
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/sears-api.git
-   cd sears-api
+   cd sears-api/backend (for frontend, use cd sears-api/frontend)
    ```
 
 2. Install dependencies:
@@ -36,6 +36,7 @@ This application provides the frontend and backend for SEARS. It has the followi
    npm run dev
    ```
 
+Please Note:
 ```
 You have to do it twice. once for the frontend and once for the backend.
 ```
