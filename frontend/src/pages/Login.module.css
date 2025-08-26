@@ -1,0 +1,49 @@
+.loginContainer {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 32px;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #e0e0e0;
+}
+.loginTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 24px;
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.loginBtn {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.message {
+  color: #d32f2f;
+  text-align: center;
+  margin-top: 8px;
+}
+.signupLink {
+  text-align: center;
+  margin-top: 18px;
+  color: #1976d2;
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}

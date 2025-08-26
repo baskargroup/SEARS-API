@@ -1,0 +1,86 @@
+.dashboard {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #f5f7fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #e0e0e0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.title {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+.signOutBtn {
+  padding: 8px 20px;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.toggleBtn {
+  padding: 10px 24px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.toggleBtn.enabled {
+  background: #388e3c;
+}
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.userCard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #eee;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.userEmail {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1976d2;
+}
+.userStatus {
+  font-size: 0.95rem;
+  color: #555;
+}
+.actionBtns {
+  display: flex;
+  gap: 10px;
+}
+.approveBtn {
+  background: #388e3c;
+  color: #fff;
+}
+.deactivateBtn {
+  background: #d32f2f;
+  color: #fff;
+}
+.reactivateBtn {
+  background: #1976d2;
+  color: #fff;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
