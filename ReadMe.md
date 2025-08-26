@@ -41,3 +41,6 @@ Please Note:
 You have to do it twice. once for the frontend and once for the backend.
 ```
 
+## Usage
+
+Please go to [API Key Usage](API_KEY_USAGE.md) for instructions on how to use your API key.
