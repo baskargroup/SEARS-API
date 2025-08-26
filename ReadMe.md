@@ -1,4 +1,4 @@
-# SEARS API
+# SEARS API [MIT License]
 
 This application provides the frontend and backend for SEARS. It has the following components:
 
