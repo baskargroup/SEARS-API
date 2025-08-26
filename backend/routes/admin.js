@@ -1,3 +1,18 @@
+// Admin: Extend API key validity by 90 days
+router.post('/extend-apikey/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+  if (!user) return res.status(404).send('User not found');
+  user.apiKeyExpiry = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000);
+  await user.save();
+  res.send('API key validity extended by 90 days');
+});
+// Admin: Delete user
+router.delete('/user/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+  if (!user) return res.status(404).send('User not found');
+  await user.deleteOne();
+  res.send('User deleted');
+});
 import express from 'express';
 import User from '../models/User.js';
 import bcrypt from 'bcryptjs';

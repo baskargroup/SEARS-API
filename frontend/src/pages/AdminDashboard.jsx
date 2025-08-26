@@ -7,6 +7,16 @@ import { useNavigate } from 'react-router-dom';
 import styles from './AdminDashboard.module.css';
 
 function AdminDashboard() {
+  const handleExtendApiKey = async (id) => {
+    await axios.post(`/admin/extend-apikey/${id}`);
+    fetchUsers();
+  };
+  const handleDeleteUser = async (id) => {
+    if (window.confirm('Are you sure you want to delete this user? This action cannot be undone.')) {
+      await axios.delete(`/admin/user/${id}`);
+      fetchUsers();
+    }
+  };
   const [users, setUsers] = useState([]);
   const [signupDisabled, setSignupDisabled] = useState(false);
   const [showSignupWarning, setShowSignupWarning] = useState(false);
@@ -72,10 +82,13 @@ function AdminDashboard() {
               <div><b>Last Name:</b> {user.lastName}</div>
               <div><b>Affiliation:</b> {user.affiliation}</div>
               <div className={styles.userStatus}>Status: <b>{user.status}</b></div>
+              <div><b>API Key Expires:</b> {user.apiKeyExpiry ? new Date(user.apiKeyExpiry).toLocaleString() : 'N/A'}</div>
               <div className={styles.actionBtns}>
                 {user.status === 'pending' && <button className={`${styles.btn} ${styles.approveBtn}`} onClick={() => handleApprove(user._id)}>Approve</button>}
                 {user.status === 'active' && <button className={`${styles.btn} ${styles.deactivateBtn}`} onClick={() => handleDeactivate(user._id)}>Deactivate</button>}
                 {user.status === 'deactivated' && <button className={`${styles.btn} ${styles.reactivateBtn}`} onClick={() => handleReactivate(user._id)}>Reactivate</button>}
+                <button className={`${styles.btn} ${styles.deleteBtn}`} style={{background:'#d32f2f', marginLeft:8}} onClick={() => handleDeleteUser(user._id)}>Delete</button>
+                <button className={`${styles.btn} ${styles.extendBtn}`} style={{background:'#388e3c', marginLeft:8}} onClick={() => handleExtendApiKey(user._id)}>Extend API Key</button>
               </div>
             </div>
           ))}
